@@ -5,12 +5,6 @@
 
 ## 1. Escolha a categoria
 
-Os artigos ficam em:
-
-```text
-docs/conteudos/posts/
-```
-
 Categorias atuais:
 
 ```text
@@ -37,13 +31,6 @@ Exemplo:
 cp docs/conteudos/posts/python/pydantic.md \
    docs/conteudos/posts/python/meu-novo-artigo.md
 ```
-
-Use no nome do arquivo:
-
-- apenas letras minúsculas;
-- palavras separadas por hífen;
-- sem espaços;
-- sem acentos.
 
 Exemplo:
 
