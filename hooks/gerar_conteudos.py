@@ -71,11 +71,6 @@ CATEGORIES: dict[str, dict[str, str]] = {
 
 
 def extract_front_matter_title(content: str) -> str | None:
-    """
-    Extrai o campo title do front matter sem interpretar todo o YAML.
-
-    Isso evita problemas em títulos que possuem dois-pontos.
-    """
     if not content.startswith("---"):
         return None
 
@@ -112,10 +107,6 @@ def extract_front_matter_title(content: str) -> str | None:
 
 
 def extract_heading_title(content: str) -> str | None:
-    """
-    Utiliza o primeiro H1 do artigo quando não encontra title
-    no front matter.
-    """
     match = re.search(
         r"^#\s+(.+?)\s*$",
         content,
@@ -129,9 +120,6 @@ def extract_heading_title(content: str) -> str | None:
 
 
 def article_title(path: Path) -> str:
-    """
-    Determina o título que será exibido na página de conteúdos.
-    """
     content = path.read_text(encoding="utf-8")
 
     title = (
@@ -146,9 +134,6 @@ def article_title(path: Path) -> str:
 
 
 def find_articles(folder_name: str) -> list[dict[str, str]]:
-    """
-    Encontra e ordena todos os artigos Markdown da categoria.
-    """
     folder = DOCS_DIR / folder_name
 
     if not folder.exists():
@@ -177,9 +162,6 @@ def build_category_card(
     folder_name: str,
     category: dict[str, str],
 ) -> str:
-    """
-    Monta um card Markdown para uma categoria.
-    """
     articles = find_articles(folder_name)
 
     if not articles:
@@ -201,11 +183,7 @@ def build_category_card(
 
 
 def generate_contents_page() -> None:
-    """
-    Gera docs/conteudos.md com base nos arquivos existentes.
-    """
-    cards = []
-
+    cards: list[str] = []
     total_articles = 0
 
     for folder_name, category in CATEGORIES.items():
@@ -254,9 +232,44 @@ Esta página é atualizada automaticamente com base nos artigos publicados.
     )
 
 
+def build_navigation() -> list[dict[str, Any]]:
+    nav: list[dict[str, Any]] = [
+        {"Início": "index.md"},
+        {"Conteúdos": "conteudos.md"},
+    ]
+
+    for folder_name, category in CATEGORIES.items():
+        articles = find_articles(folder_name)
+
+        if not articles:
+            continue
+
+        category_items = [
+            {article["title"]: article["link"]}
+            for article in articles
+        ]
+
+        nav.append(
+            {
+                category["title"]: category_items,
+            }
+        )
+
+    nav.extend(
+        [
+            {"Projetos": "projetos.md"},
+            {"Sobre": "sobre.md"},
+        ]
+    )
+
+    return nav
+
+
 def on_config(config: Any, **kwargs: Any) -> Any:
-    """
-    Evento executado antes de o MkDocs coletar e construir as páginas.
-    """
     generate_contents_page()
+
+    config["nav"] = build_navigation()
+
+    print("Menu de navegação atualizado automaticamente.")
+
     return config
