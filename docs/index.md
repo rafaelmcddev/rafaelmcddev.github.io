@@ -4,11 +4,9 @@ hide:
   - toc
 ---
 
-# Olá, eu sou Rafael Dias 👋
-
 <div class="hero" markdown>
 
-## Desenvolvedor Backend
+## Rafael Dias · Desenvolvedor Backend
 
 **Python · Django · AWS · Arquitetura de Software**
 
@@ -16,7 +14,7 @@ Atuo no desenvolvimento de aplicações backend, integrações, processamento de
 
 Aqui compartilho conteúdos sobre engenharia de software, sistemas distribuídos, cloud, inteligência artificial e boas práticas de desenvolvimento.
 
-[Explorar conteúdos](python/pydantic.md){ .md-button .md-button--primary }
+[Explorar conteúdos](conteudos.md){ .md-button .md-button--primary }
 [Ver meu GitHub](https://github.com/rafaelmcddev){ .md-button }
 [LinkedIn](https://www.linkedin.com/in/rafael-dias-64016023/){ .md-button }
 

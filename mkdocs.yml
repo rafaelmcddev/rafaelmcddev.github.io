@@ -81,6 +81,7 @@ markdown_extensions:
 
 nav:
   - Início: index.md
+  - Conteúdos: conteudos.md
   - Sobre: sobre.md
   - Projetos: projetos.md
   - Talks: talks.md
