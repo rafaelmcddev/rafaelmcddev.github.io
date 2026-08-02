@@ -20,7 +20,7 @@ Sou formado em **Ciência da Computação pela UNIDERP** e pós-graduado em **De
 
 <div class="grid cards about-grid" markdown>
 
--   :material-code-braces:{ .lg .middle } **Desenvolvimento Backend**
+-   :material-code-braces:{ .lg .middle } **Dev Backend**
 
     ---
 

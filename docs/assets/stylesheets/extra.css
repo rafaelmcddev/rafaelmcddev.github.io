@@ -2453,3 +2453,192 @@ body:has(.hero) .hero .md-button {
         font-size: 1.45rem !important;
     }
 }
+
+
+
+/* =========================================================
+   AJUSTE FINAL — TIPOGRAFIA DA SEÇÃO SOBRE
+   Deve permanecer no final do arquivo
+   ========================================================= */
+
+/* Bloco principal mais compacto */
+.about-hero {
+  padding: 1.15rem 1.4rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* Título "Sobre mim" */
+.about-hero h1 {
+  margin: 0 0 0.6rem !important;
+  font-size: clamp(1.65rem, 1.9vw, 2rem) !important;
+  line-height: 1.12 !important;
+  font-weight: 750 !important;
+}
+
+/* Texto de apresentação */
+.about-hero p {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 0.5rem !important;
+  font-size: 0.82rem !important;
+  line-height: 1.58 !important;
+}
+
+.about-hero p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Cards de especialidades mais compactos */
+.about-grid {
+  margin-bottom: 1.7rem !important;
+}
+
+.about-grid > ul,
+.about-grid > ol {
+  gap: 0.8rem !important;
+}
+
+.about-grid.grid.cards > ul > li,
+.about-grid.grid.cards > ol > li {
+  padding: 0.9rem !important;
+}
+
+/* Cabeçalho de cada card */
+.about-grid.grid.cards > ul > li > p:first-child,
+.about-grid.grid.cards > ol > li > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.5rem !important;
+  line-height: 1.22 !important;
+}
+
+/* Ícones */
+.about-grid .lg,
+.about-grid svg {
+  width: 1.45rem !important;
+  height: 1.45rem !important;
+  min-width: 1.45rem !important;
+  font-size: 1.45rem !important;
+}
+
+/* Títulos dos cards */
+.about-grid strong {
+  font-size: 0.86rem !important;
+  line-height: 1.28 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.012em !important;
+}
+
+/* Linha divisória */
+.about-grid hr {
+  margin: 0.5rem 0 0.6rem !important;
+}
+
+/* Descrição dos cards */
+.about-grid p:not(:first-child) {
+  margin: 0 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Títulos das demais seções da página Sobre */
+.md-main__inner:has(.about-hero) .md-typeset h2 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.65rem !important;
+  padding-bottom: 0.35rem !important;
+  font-size: clamp(1.12rem, 1.2vw, 1.32rem) !important;
+  line-height: 1.25 !important;
+}
+
+/* Chips de tecnologias */
+.technology-grid li,
+.technology-grid > div {
+  padding: 0.55rem 0.7rem !important;
+  font-size: 0.78rem !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important;
+}
+
+/* Links e botões finais */
+.about-links .md-button {
+  padding: 0.55rem 0.9rem !important;
+  font-size: 0.8rem !important;
+}
+
+/* Notebook */
+@media screen and (max-width: 1200px) {
+  .about-hero h1 {
+    font-size: clamp(1.6rem, 2.2vw, 1.9rem) !important;
+  }
+
+  .about-hero p {
+    font-size: 0.8rem !important;
+  }
+
+  .about-grid strong {
+    font-size: 0.84rem !important;
+  }
+
+  .about-grid p:not(:first-child) {
+    font-size: 0.76rem !important;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  .about-hero {
+    padding: 1rem 1.1rem !important;
+  }
+
+  .about-hero h1 {
+    font-size: 1.7rem !important;
+  }
+
+  .about-hero p {
+    font-size: 0.8rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .about-grid.grid.cards > ul > li,
+  .about-grid.grid.cards > ol > li {
+    padding: 0.85rem !important;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  .about-hero {
+    padding: 0.95rem 0.9rem !important;
+  }
+
+  .about-hero h1 {
+    font-size: 1.55rem !important;
+  }
+
+  .about-hero p {
+    font-size: 0.78rem !important;
+    line-height: 1.52 !important;
+  }
+
+  .about-grid .lg,
+  .about-grid svg {
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    min-width: 1.35rem !important;
+    font-size: 1.35rem !important;
+  }
+
+  .about-grid strong {
+    font-size: 0.82rem !important;
+  }
+
+  .about-grid p:not(:first-child) {
+    font-size: 0.75rem !important;
+  }
+
+  .technology-grid li,
+  .technology-grid > div {
+    font-size: 0.76rem !important;
+  }
+}
