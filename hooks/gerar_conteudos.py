@@ -254,7 +254,6 @@ def build_navigation() -> list[dict[str, Any]]:
 
     nav.extend(
         [
-            {"Projetos": "projetos.md"},
             {"Sobre": "sobre.md"},
         ]
     )

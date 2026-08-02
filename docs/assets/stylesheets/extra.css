@@ -75,6 +75,8 @@ body {
 
 .md-typeset p {
   color: var(--rafael-text);
+  margin: .75rem 0;
+  line-height: 1.65;
 }
 
 .md-typeset a {
@@ -491,6 +493,8 @@ body {
 [data-md-color-scheme="slate"] .hero p,
 [data-md-color-scheme="slate"] .md-typeset p {
   color: var(--rafael-text);
+  margin: .75rem 0;
+  line-height: 1.65;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
@@ -1123,9 +1127,9 @@ body:has(.grid.cards) .grid.cards {
   }
 
   .hero p {
-    margin-bottom: 0.4rem !important;
+    margin-bottom: .5rem !important;
     font-size: 0.86rem !important;
-    line-height: 1.5 !important;
+    line-height: 1.55 !important;
   }
 
   .md-typeset > blockquote:first-of-type {
@@ -1421,4 +1425,1031 @@ body:has(.grid.cards):not(:has(.hero)) .md-content__inner {
   .md-content__inner {
     max-width: 880px !important;
   }
+}
+
+/* =========================================================
+   HOME E CONTEÚDOS — CENTRALIZAÇÃO DEFINITIVA
+   Deve permanecer no final absoluto do arquivo
+   ========================================================= */
+
+/*
+ * Nas páginas Home e Conteúdos, remove a grade de três colunas
+ * usada nos artigos e cria uma única coluna central.
+ */
+@media screen and (min-width: 1220px) {
+  .md-main__inner:has(.hero),
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1180px) !important;
+    justify-content: center !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .md-main__inner:has(.hero) > .md-sidebar,
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) > .md-sidebar {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .md-main__inner:has(.hero) > .md-content,
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) > .md-content {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 1180px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .md-main__inner:has(.hero) .md-content__inner,
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+    width: 100% !important;
+    max-width: 1180px !important;
+    margin: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1219px) {
+  .md-main__inner:has(.hero),
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .md-main__inner:has(.hero) > .md-sidebar,
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) > .md-sidebar {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .md-main__inner:has(.hero) > .md-content,
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) > .md-content {
+    width: calc(100% - 2rem) !important;
+    max-width: 1180px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 0 !important;
+  }
+
+  .md-main__inner:has(.hero) .md-content__inner,
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .md-main__inner:has(.hero) > .md-content,
+  .md-main__inner:has(.grid.cards):not(:has(.hero)) > .md-content {
+    width: calc(100% - 1.2rem) !important;
+  }
+}
+/* =========================================================
+   PÁGINA SOBRE
+   ========================================================= */
+
+/* Remove as colunas laterais e centraliza a página Sobre */
+.md-main__inner:has(.about-hero) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1100px) !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  column-gap: 0 !important;
+}
+
+.md-main__inner:has(.about-hero) > .md-sidebar {
+  display: none !important;
+}
+
+.md-main__inner:has(.about-hero) > .md-content {
+  grid-column: 1 !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.md-main__inner:has(.about-hero) .md-content__inner {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Bloco de apresentação */
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--rafael-border);
+  border-radius: var(--rafael-radius-lg);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: var(--rafael-shadow-sm);
+}
+
+.about-hero h1 {
+  margin: 0 0 1rem !important;
+  color: var(--rafael-blue);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.about-hero p {
+  max-width: 900px;
+  margin-bottom: 0.8rem;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.about-hero p:last-child {
+  margin-bottom: 0;
+}
+
+/* Cards de áreas de atuação */
+.about-grid {
+  margin-bottom: 2.5rem;
+}
+
+.about-grid > ul,
+.about-grid > ol {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Grade de tecnologias */
+.technology-grid {
+  margin: 1rem 0 2.5rem;
+}
+
+.technology-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: .75rem;
+}
+
+.technology-grid li {
+  margin: 0 !important;
+  padding: .85rem 1rem;
+
+  border: 1px solid var(--rafael-border);
+  border-radius: 12px;
+
+  background: var(--rafael-surface);
+
+  text-align: center;
+  font-weight: 600;
+
+  box-shadow: var(--rafael-shadow-sm);
+
+  transition: .2s;
+}
+
+.technology-grid li:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--rafael-shadow-md);
+}
+
+/* Links finais */
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.about-links .md-button {
+  margin: 0;
+}
+
+/* Modo escuro */
+[data-md-color-scheme="slate"] .about-hero {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(59, 130, 246, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #172033 0%, #111827 100%);
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  .md-main__inner:has(.about-hero) > .md-content {
+    width: calc(100% - 2rem) !important;
+    margin-inline: auto !important;
+  }
+
+  .about-grid > ul,
+  .about-grid > ol {
+    grid-template-columns: 1fr;
+  }
+
+  .technology-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  .md-main__inner:has(.about-hero) > .md-content {
+    width: calc(100% - 1.2rem) !important;
+  }
+
+  .about-hero {
+    padding: 1.2rem 1rem;
+    border-radius: var(--rafael-radius-md);
+  }
+
+  .about-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .about-hero p {
+    font-size: 0.88rem;
+  }
+
+  .technology-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-links {
+    display: block;
+  }
+
+  .about-links .md-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.6rem;
+    text-align: center;
+  }
+}
+
+
+
+/* =========================================================
+   AJUSTES FINAIS — TIPOGRAFIA DA PÁGINA SOBRE
+   ========================================================= */
+
+/* Hero mais sóbrio e compacto */
+.about-hero {
+  padding: 1.35rem 1.6rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Título principal menor e coerente com o restante do site */
+.about-hero h1 {
+  margin: 0 0 0.7rem !important;
+  font-size: clamp(1.8rem, 2.2vw, 2.2rem) !important;
+  line-height: 1.12 !important;
+  font-weight: 750 !important;
+}
+
+/* Texto de apresentação menor e com leitura confortável */
+.about-hero p {
+  max-width: 940px !important;
+  margin-bottom: 0.55rem !important;
+  font-size: 0.9rem !important;
+  line-height: 1.62 !important;
+}
+
+.about-hero p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Cards das áreas de atuação mais compactos */
+.about-grid {
+  margin-bottom: 2rem !important;
+}
+
+.about-grid > ul,
+.about-grid > ol {
+  gap: 0.9rem !important;
+}
+
+/* Reduz o padding dos cards somente na página Sobre */
+.about-grid.grid.cards > ul > li,
+.about-grid.grid.cards > ol > li {
+  padding: 1.05rem !important;
+}
+
+/* Ícones menores */
+.about-grid .lg {
+  font-size: 1.65rem !important;
+}
+
+/* Títulos dos cards menores */
+.about-grid strong {
+  font-size: 0.94rem !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+}
+
+/* Textos dos cards menores */
+.about-grid p {
+  margin-top: 0.65rem !important;
+  font-size: 0.86rem !important;
+  line-height: 1.58 !important;
+}
+
+/* Linha interna dos cards mais compacta */
+.about-grid hr {
+  margin: 0.65rem 0 !important;
+}
+
+/* Títulos das seções da página Sobre */
+.md-main__inner:has(.about-hero) .md-typeset h2 {
+  margin-top: 1rem !important;
+  font-size: clamp(1.25rem, 1.35vw, 1.5rem) !important;
+}
+
+/* Tecnologias em quatro colunas em telas grandes */
+.technology-grid {
+  margin: 0.9rem 0 2rem !important;
+}
+
+.technology-grid ul {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.65rem !important;
+}
+
+.technology-grid li {
+  padding: 0.65rem 0.8rem !important;
+  font-size: 0.84rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Notebook */
+@media screen and (max-width: 1200px) {
+  .technology-grid ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  .about-hero {
+    padding: 1.15rem 1.25rem !important;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(1.7rem, 4vw, 2rem) !important;
+  }
+
+  .about-grid strong {
+    font-size: 0.92rem !important;
+  }
+
+  .technology-grid ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  .about-hero {
+    padding: 1rem 0.9rem !important;
+  }
+
+  .about-hero h1 {
+    font-size: 1.65rem !important;
+  }
+
+  .about-hero p {
+    font-size: 0.86rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .about-grid .lg {
+    font-size: 1.5rem !important;
+  }
+
+  .about-grid strong {
+    font-size: 0.9rem !important;
+  }
+
+  .about-grid p {
+    font-size: 0.84rem !important;
+  }
+
+  .technology-grid ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+/* =========================================================
+   LEITURA DOS ARTIGOS
+   ========================================================= */
+
+.md-typeset p + p {
+    margin-top: .8rem;
+}
+
+.md-typeset h2 {
+    margin-top: 1rem !important;
+}
+
+.md-typeset h2 + p {
+    margin-top: .7rem;
+}
+
+.md-typeset h3 {
+    margin-top: 1.6rem !important;
+}
+
+.md-typeset ul,
+.md-typeset ol {
+    margin-top: .7rem;
+    margin-bottom: .9rem;
+}
+
+.md-typeset li {
+    margin-bottom: .2rem;
+}
+/* =========================================================
+   ARTIGOS — TIPOGRAFIA E ESPAÇAMENTO COMPACTOS
+   ========================================================= */
+
+/* Aplica somente às páginas de leitura */
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset {
+  font-size: 0.82rem !important;
+  line-height: 1.62 !important;
+}
+
+/* Parágrafos mais próximos */
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset p {
+  margin-top: 0.55rem !important;
+  margin-bottom: 0.55rem !important;
+  font-size: inherit !important;
+  line-height: 1.62 !important;
+}
+
+/* Títulos de seção */
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset h2 {
+  margin-top: 1.45rem !important;
+  margin-bottom: 0.55rem !important;
+  padding-bottom: 0.35rem !important;
+  font-size: 1.35rem !important;
+  line-height: 1.25 !important;
+}
+
+/* Subtítulos */
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset h3 {
+  margin-top: 1.2rem !important;
+  margin-bottom: 0.45rem !important;
+  font-size: 1.08rem !important;
+}
+
+/* Linhas horizontais entre seções */
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset hr {
+  margin-top: 1.15rem !important;
+  margin-bottom: 1.15rem !important;
+}
+
+/* Código mais compacto */
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset .highlight {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset pre {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset pre > code {
+  font-size: 0.78rem !important;
+  line-height: 1.55 !important;
+}
+
+/* Listas */
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset ul,
+.md-main__inner:not(:has(.hero)):not(:has(.grid.cards)):not(:has(.about-hero))
+.md-typeset ol {
+  margin-top: 0.55rem !important;
+  margin-bottom: 0.7rem !important;
+}
+/* =========================================================
+   HOME — AJUSTE VERTICAL DO HERO
+   ========================================================= */
+
+body:has(.hero) .hero {
+  padding-top: 0.85rem !important;
+  padding-bottom: 0.95rem !important;
+}
+
+/* Aproxima o título do topo */
+body:has(.hero) .hero h1 {
+  margin-top: 0 !important;
+  margin-bottom: 0.2rem !important;
+}
+
+/* Mantém o restante mais compacto */
+body:has(.hero) .hero h2 {
+  margin-bottom: 0.4rem !important;
+}
+
+body:has(.hero) .hero p {
+  margin-bottom: 0.35rem !important;
+}
+
+/* Espaço controlado antes dos botões */
+body:has(.hero) .hero .md-button {
+  margin-top: 0.35rem !important;
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  body:has(.hero) .hero {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+}
+/* =========================================================
+   PÁGINA CONTEÚDOS
+   ========================================================= */
+
+/* Cards mais compactos */
+.grid.cards > ul > li {
+    padding: 1.2rem !important;
+}
+
+/* Ícones menores */
+.grid.cards .lg,
+.grid.cards svg {
+    font-size: 2.1rem !important;
+    width: 2.1rem !important;
+    height: 2.1rem !important;
+}
+
+/* Título do card */
+.grid.cards strong {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+/* Texto descritivo */
+.grid.cards p {
+    font-size: 0.94rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: .75rem !important;
+}
+
+/* Lista de artigos */
+.grid.cards li li {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: .3rem !important;
+}
+
+/* Links dos artigos */
+.grid.cards li li a {
+    font-size: inherit !important;
+}
+
+/* Linha separadora */
+.grid.cards hr {
+    margin: .8rem 0 !important;
+}
+
+
+
+/* =========================================================
+   REVISÃO FINAL — PÁGINA DE CONTEÚDOS E CONSISTÊNCIA VISUAL
+   Deve permanecer no final do arquivo
+   ========================================================= */
+
+/*
+ * Estes seletores atuam somente na página Conteúdos.
+ * A Home também possui cards, por isso excluímos páginas com .hero
+ * e a página Sobre, que possui .about-hero.
+ */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol {
+  gap: 0.85rem !important;
+}
+
+/* Cards mais compactos */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul > li,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol > li {
+  padding: 1rem !important;
+}
+
+/* Cabeçalho do card: ícone e título */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul > li > p:first-child,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol > li > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.55rem !important;
+  line-height: 1.25 !important;
+}
+
+/* Ícones menores e proporcionais */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards .lg,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards svg {
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+  min-width: 1.8rem !important;
+  font-size: 1.8rem !important;
+}
+
+/* Título de cada categoria */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards strong {
+  font-size: 0.98rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Linha separadora mais discreta */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards hr {
+  margin: 0.6rem 0 0.7rem !important;
+}
+
+/* Descrição da categoria */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul > li > p:not(:first-child),
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol > li > p:not(:first-child) {
+  margin: 0 0 0.55rem !important;
+  font-size: 0.82rem !important;
+  line-height: 1.52 !important;
+}
+
+/* Lista de artigos dentro dos cards */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul > li > ul,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol > li > ul {
+  margin: 0.45rem 0 0 !important;
+  padding-left: 1.05rem !important;
+}
+
+/* Itens e links dos artigos */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul > li > ul > li,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol > li > ul > li {
+  margin: 0 0 0.28rem !important;
+  padding-left: 0.08rem !important;
+  font-size: 0.8rem !important;
+  line-height: 1.42 !important;
+}
+
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul > li > ul > li > a,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol > li > ul > li > a {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: 500 !important;
+}
+
+/* Evita cards visualmente altos demais */
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ul > li,
+body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+.grid.cards > ol > li {
+  min-height: 0 !important;
+}
+
+/* Notebook */
+@media screen and (max-width: 1400px) {
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards strong {
+    font-size: 0.94rem !important;
+  }
+
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ul > li > p:not(:first-child),
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ol > li > p:not(:first-child) {
+    font-size: 0.8rem !important;
+  }
+
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ul > li > ul > li,
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ol > li > ul > li {
+    font-size: 0.78rem !important;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ul > li,
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ol > li {
+    padding: 0.9rem !important;
+  }
+
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards .lg,
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards svg {
+    width: 1.65rem !important;
+    height: 1.65rem !important;
+    min-width: 1.65rem !important;
+    font-size: 1.65rem !important;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards strong {
+    font-size: 0.92rem !important;
+  }
+
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ul > li > p:not(:first-child),
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ol > li > p:not(:first-child) {
+    font-size: 0.79rem !important;
+  }
+
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ul > li > ul > li,
+  body:has(.grid.cards):not(:has(.hero)):not(:has(.about-hero))
+  .grid.cards > ol > li > ul > li {
+    font-size: 0.78rem !important;
+  }
+}
+
+
+
+/* =========================================================
+   AJUSTES FINAIS — CARDS DA HOME
+   Deve permanecer no final do arquivo
+   ========================================================= */
+
+/* Grade da Home mais equilibrada */
+body:has(.hero) .grid.cards > ul,
+body:has(.hero) .grid.cards > ol {
+  gap: 0.9rem !important;
+}
+
+/* Cards da Home mais refinados */
+body:has(.hero) .grid.cards > ul > li,
+body:has(.hero) .grid.cards > ol > li {
+  padding: 1.1rem !important;
+  border-color: var(--rafael-border) !important;
+  box-shadow: var(--rafael-shadow-sm) !important;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+/* Hover mais elegante */
+body:has(.hero) .grid.cards > ul > li:hover,
+body:has(.hero) .grid.cards > ol > li:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(37, 99, 235, 0.4) !important;
+  box-shadow: var(--rafael-shadow-md) !important;
+}
+
+/* Cabeçalho do card */
+body:has(.hero) .grid.cards > ul > li > p:first-child,
+body:has(.hero) .grid.cards > ol > li > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.65rem !important;
+  line-height: 1.25 !important;
+}
+
+/* Ícones menores */
+body:has(.hero) .grid.cards .lg,
+body:has(.hero) .grid.cards svg {
+  width: 1.9rem !important;
+  height: 1.9rem !important;
+  min-width: 1.9rem !important;
+  font-size: 1.9rem !important;
+}
+
+/* Títulos dos cards */
+body:has(.hero) .grid.cards strong {
+  font-size: 0.98rem !important;
+  line-height: 1.25 !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.015em !important;
+  transition: color 0.2s ease !important;
+}
+
+/* Título e ícone ganham destaque no hover */
+body:has(.hero) .grid.cards > ul > li:hover strong,
+body:has(.hero) .grid.cards > ol > li:hover strong,
+body:has(.hero) .grid.cards > ul > li:hover .lg,
+body:has(.hero) .grid.cards > ol > li:hover .lg {
+  color: var(--rafael-blue-dark) !important;
+}
+
+/* Remove visualmente a linha interna dos cards da Home */
+body:has(.hero) .grid.cards hr {
+  display: none !important;
+}
+
+/* Descrição dos cards */
+body:has(.hero) .grid.cards > ul > li > p:not(:first-child),
+body:has(.hero) .grid.cards > ol > li > p:not(:first-child) {
+  margin: 0 0 0.6rem !important;
+  font-size: 0.83rem !important;
+  line-height: 1.52 !important;
+}
+
+/* Links finais dos cards */
+body:has(.hero) .grid.cards > ul > li a,
+body:has(.hero) .grid.cards > ol > li a {
+  font-size: 0.8rem !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+}
+
+/* Mantém o link final mais próximo do conteúdo */
+body:has(.hero) .grid.cards > ul > li > p:last-child,
+body:has(.hero) .grid.cards > ol > li > p:last-child {
+  margin-top: 0.35rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Título "Base de conhecimento" um pouco mais discreto */
+body:has(.hero) .md-typeset h2 {
+  font-size: clamp(1.25rem, 1.35vw, 1.5rem) !important;
+  margin-bottom: 0.7rem !important;
+}
+
+/* Notebook */
+@media screen and (max-width: 1400px) {
+  body:has(.hero) .grid.cards > ul > li,
+  body:has(.hero) .grid.cards > ol > li {
+    padding: 1rem !important;
+  }
+
+  body:has(.hero) .grid.cards strong {
+    font-size: 0.94rem !important;
+  }
+
+  body:has(.hero) .grid.cards > ul > li > p:not(:first-child),
+  body:has(.hero) .grid.cards > ol > li > p:not(:first-child) {
+    font-size: 0.81rem !important;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  body:has(.hero) .grid.cards .lg,
+  body:has(.hero) .grid.cards svg {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    min-width: 1.75rem !important;
+    font-size: 1.75rem !important;
+  }
+
+  body:has(.hero) .grid.cards > ul > li,
+  body:has(.hero) .grid.cards > ol > li {
+    padding: 0.95rem !important;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  body:has(.hero) .grid.cards strong {
+    font-size: 0.92rem !important;
+  }
+
+  body:has(.hero) .grid.cards > ul > li > p:not(:first-child),
+  body:has(.hero) .grid.cards > ol > li > p:not(:first-child) {
+    font-size: 0.79rem !important;
+  }
+
+  body:has(.hero) .grid.cards > ul > li a,
+  body:has(.hero) .grid.cards > ol > li a {
+    font-size: 0.78rem !important;
+  }
+}
+/* =========================================================
+   HOME — TEXTO APROVEITA A LARGURA DO HERO
+   ========================================================= */
+
+body:has(.hero) .hero p {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Mantém os botões na largura natural */
+body:has(.hero) .hero .md-button {
+  width: auto !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* Mais respiro nas laterais */
+    .md-main__inner {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Área principal do conteúdo */
+    .md-content__inner {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Hero da Home */
+    .hero {
+        padding: 1.2rem !important;
+        border-radius: 16px !important;
+    }
+
+    /* Artigos */
+    .md-typeset {
+        font-size: .95rem !important;
+        line-height: 1.65 !important;
+    }
+
+    /* Evita texto colado na borda */
+    .md-typeset p,
+    .md-typeset li,
+    .md-typeset blockquote {
+        max-width: 100%;
+    }
+
+    /* Imagens ocupam a largura disponível */
+    .md-typeset img {
+        border-radius: 12px;
+    }
+
+    /* Cards */
+    .grid.cards > ul > li {
+        padding: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .md-main__inner {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .hero {
+        padding: 1.35rem !important;
+    }
+
+    .md-typeset h1 {
+        font-size: 1.9rem !important;
+    }
+
+    .md-typeset h2 {
+        font-size: 1.45rem !important;
+    }
 }
