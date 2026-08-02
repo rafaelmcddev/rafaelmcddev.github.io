@@ -7,6 +7,9 @@ repo_name: rafaelmcddev/rafaelmcddev.github.io
 repo_url: https://github.com/rafaelmcddev/rafaelmcddev.github.io
 edit_uri: edit/main/docs/
 
+hooks:
+  - hooks/gerar_conteudos.py
+
 theme:
   name: material
   language: pt-BR
@@ -86,46 +89,6 @@ nav:
   - Projetos: projetos.md
   - Talks: talks.md
 
-  - Inteligência Artificial:
-      - Documentação para humanos e IA: inteligencia-artificial/documentacao-humanos-ia.md
-      - IA na vida dos desenvolvedores: inteligencia-artificial/ia-na-vida-dos-desenvolvedores.md
-      - Demonstração de agentes de IA: inteligencia-artificial/agentes-de-ia.md
-
-  - Python:
-      - Pydantic: python/pydantic.md
-      - Celery vs Dramatiq: python/celery-vs-dramatiq.md
-      - Pandas e BeautifulSoup: python/pandas-beautifulsoup-etl.md
-      - Apache Airflow: python/apache-airflow.md
-
-  - Django:
-      - Django Constraints: django/django-constraints.md
-      - select_related vs prefetch_related: django/select-related-vs-prefetch-related.md
-      - Exists, OuterRef e annotate: django/exists-outerref-annotate.md
-
-  - Arquitetura:
-      - Idempotência: arquitetura/idempotencia.md
-      - Event-Driven Architecture: arquitetura/event-driven-architecture.md
-      - Amazon SQS: arquitetura/amazon-sqs.md
-      - Redis além do cache: arquitetura/redis-alem-do-cache.md
-      - Feature Flags: arquitetura/feature-flags.md
-      - Circuit Breaker e Retry: arquitetura/circuit-breaker-retry.md
-
-  - Cloud e DevOps:
-      - Kubernetes — O que é um Pod?: cloud-devops/kubernetes-pod.md
-      - Kubernetes — Requests vs Limits: cloud-devops/kubernetes-requests-limits.md
-      - Observabilidade: cloud-devops/observabilidade.md
-      - Revert em produção: cloud-devops/revert-producao.md
-
-  - Engenharia de Software:
-      - Changelog: engenharia-software/changelog.md
-      - Spec-Driven Development: engenharia-software/spec-driven-development.md
-
-  - Produto e Colaboração:
-      - Dashboards para Produto: produto-colaboracao/dashboards-produto.md
-      - Refinamentos com Produto: produto-colaboracao/refinamentos-produto.md
-      - Ferramentas Atlassian: produto-colaboracao/ferramentas-atlassian.md
-      - Slack — Boas práticas: produto-colaboracao/slack-boas-praticas.md
-      - Reuniões no home office: produto-colaboracao/reunioes-home-office.md
 
 extra_css:
   - assets/stylesheets/extra.css
