@@ -34,8 +34,9 @@ body {
   color: var(--rafael-text);
 }
 
+
 .md-grid {
-  max-width: 1280px;
+  max-width: 1700px;
 }
 
 .md-main__inner {
@@ -130,7 +131,7 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 3.5rem;
+  padding: 2.2rem 2.5rem;
   margin: 1rem 0 3rem;
   border: 1px solid var(--rafael-border);
   border-radius: var(--rafael-radius-lg);
@@ -558,5 +559,866 @@ body {
   .md-typeset .grid.cards > ul > li,
   .md-typeset .grid.cards > ol > li {
     padding: 1.1rem;
+  }
+}
+
+/* =========================================================
+   OVERRIDES PROFISSIONAIS — LAYOUT E RESPONSIVIDADE
+   ========================================================= */
+
+:root {
+  --rafael-content-max: 860px;
+  --rafael-layout-max: 1680px;
+}
+
+.md-grid {
+  max-width: var(--rafael-layout-max);
+}
+
+.md-content {
+  min-width: 0;
+}
+
+.md-content__inner {
+  max-width: var(--rafael-content-max);
+  margin-inline: auto;
+  padding-bottom: 4rem;
+}
+
+.md-sidebar--primary {
+  width: 12.5rem;
+}
+
+.md-sidebar--secondary {
+  width: 12rem;
+}
+
+.md-typeset {
+  font-size: 0.9rem;
+  line-height: 1.78;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  text-wrap: balance;
+}
+
+.md-typeset h1 {
+  max-width: 18ch;
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 2.4vw, 3rem);
+  line-height: 1.08;
+  font-weight: 750;
+}
+
+.md-typeset h2 {
+  font-size: clamp(1.35rem, 1.5vw, 1.7rem);
+  line-height: 1.25;
+}
+
+.md-typeset h3 {
+  font-size: 1.18rem;
+  line-height: 1.3;
+}
+
+.md-tabs__list {
+  gap: 0.1rem;
+}
+
+.md-tabs__link {
+  padding-inline: 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.md-nav__link {
+  line-height: 1.35;
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+
+.md-nav__link:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.md-nav__link--active {
+  color: var(--rafael-blue);
+  font-weight: 650;
+}
+
+.md-typeset > blockquote:first-of-type {
+  padding: 1rem 1.15rem;
+  margin: 0 0 1.6rem;
+  border-left: 4px solid var(--rafael-blue);
+  border-radius: 0 var(--rafael-radius-md) var(--rafael-radius-md) 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(124, 58, 237, 0.04));
+  box-shadow: none;
+}
+
+.md-typeset > blockquote:first-of-type p {
+  margin: 0.3rem 0;
+}
+
+.md-typeset p > img:only-child,
+.article-cover {
+  width: 100%;
+  height: auto;
+}
+
+.md-typeset .md-typeset__table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.md-typeset table:not([class]) {
+  min-width: 620px;
+}
+
+.md-typeset li + li {
+  margin-top: 0.2rem;
+}
+
+@media screen and (max-width: 1400px) {
+  :root {
+    --rafael-content-max: 800px;
+  }
+
+  .md-grid {
+    max-width: 1440px;
+  }
+
+  .md-sidebar--primary {
+    width: 11.5rem;
+  }
+
+  .md-sidebar--secondary {
+    width: 11rem;
+  }
+
+  .md-typeset h1 {
+    max-width: 20ch;
+    font-size: clamp(1.9rem, 2.3vw, 2.65rem);
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  :root {
+    --rafael-content-max: 760px;
+  }
+
+  .md-sidebar--primary {
+    width: 10.75rem;
+  }
+
+  .md-sidebar--secondary {
+    width: 10.25rem;
+  }
+
+  .md-typeset {
+    font-size: 0.87rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .md-main__inner {
+    margin-top: 0.8rem;
+  }
+
+  .md-content__inner {
+    max-width: 100%;
+  }
+
+  .md-typeset h1 {
+    max-width: none;
+    font-size: clamp(1.9rem, 5vw, 2.45rem);
+  }
+
+  .hero {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .md-main__inner {
+    margin-top: 0.35rem;
+  }
+
+  .md-content__inner {
+    padding-bottom: 2.5rem;
+  }
+
+  .md-typeset {
+    font-size: 0.84rem;
+    line-height: 1.72;
+  }
+
+  .md-typeset h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.75rem, 9vw, 2.15rem);
+    line-height: 1.12;
+  }
+
+  .md-typeset h2 {
+    margin-top: 2.2rem;
+    font-size: 1.35rem;
+  }
+
+  .md-typeset h3 {
+    font-size: 1.12rem;
+  }
+
+  .hero {
+    padding: 1.8rem 1.15rem;
+    margin-top: 0.4rem;
+    border-radius: var(--rafael-radius-md);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 10vw, 2.5rem);
+  }
+
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .md-typeset .md-button {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset .grid.cards > ol > li {
+    padding: 1.1rem;
+  }
+
+  .md-typeset p > img:only-child,
+  .article-cover {
+    margin-top: 1.1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--rafael-radius-sm);
+  }
+
+  .md-typeset table:not([class]) {
+    min-width: 560px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================================
+   AJUSTES FINAIS — TÍTULOS, METADADOS E MENU SUPERIOR
+   ========================================================= */
+
+/* O título usa toda a largura disponível do artigo */
+.md-typeset h1 {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 0.9rem;
+  font-size: clamp(2rem, 2.15vw, 2.7rem);
+  line-height: 1.08;
+  font-weight: 750;
+  text-wrap: pretty;
+}
+
+/* Bloco de nível, tempo de leitura e tecnologias mais compacto */
+.md-typeset > blockquote:first-of-type {
+  padding: 0.62rem 0.95rem;
+  margin: 0 0 1.25rem;
+  border-left: 4px solid var(--rafael-blue);
+  border-radius: 0 var(--rafael-radius-md) var(--rafael-radius-md) 0;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.07),
+    rgba(124, 58, 237, 0.04)
+  );
+  box-shadow: none;
+}
+
+.md-typeset > blockquote:first-of-type p {
+  margin: 0;
+  line-height: 1.42;
+}
+
+.md-typeset > blockquote:first-of-type p + p {
+  margin-top: 0.38rem;
+}
+
+/* Menu superior mais compacto para todos os itens caberem */
+.md-tabs__list {
+  gap: 0;
+}
+
+.md-tabs__item {
+  height: 2.4rem;
+}
+
+.md-tabs__link {
+  padding-inline: 0.42rem;
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* Em telas um pouco menores, reduz ainda mais sem cortar o último item */
+@media screen and (max-width: 1500px) {
+  .md-tabs__link {
+    padding-inline: 0.34rem;
+    font-size: 0.63rem;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .md-tabs__link {
+    padding-inline: 0.28rem;
+    font-size: 0.6rem;
+  }
+
+  .md-header__title {
+    max-width: 13rem;
+  }
+}
+
+/* Notebook */
+@media screen and (max-width: 1400px) {
+  .md-typeset h1 {
+    max-width: none;
+    font-size: clamp(1.9rem, 2.05vw, 2.45rem);
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  .md-typeset h1 {
+    max-width: none;
+    font-size: clamp(1.9rem, 5vw, 2.35rem);
+  }
+
+  .md-typeset > blockquote:first-of-type {
+    padding: 0.6rem 0.85rem;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  .md-typeset h1 {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0.85rem;
+    font-size: clamp(1.72rem, 8vw, 2.05rem);
+    line-height: 1.12;
+  }
+
+  .md-typeset > blockquote:first-of-type {
+    padding: 0.58rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .md-typeset > blockquote:first-of-type p {
+    line-height: 1.4;
+  }
+}
+/* Remove o título "Início" da Home */
+body[data-md-page="index"] .md-content__inner > h1:first-child {
+    display: none;
+}
+
+
+
+/* =========================================================
+   CORREÇÕES DEFINITIVAS — HOME, CONTEÚDOS E HERO
+   ========================================================= */
+
+/*
+  Remove o H1 automático somente em páginas que possuem:
+  - o bloco .hero (Home)
+  - a grade de cards (Conteúdos)
+  Não afeta os títulos dos artigos.
+*/
+body:has(.hero) .md-content__inner > h1:first-child,
+body:has(.grid.cards) .md-content__inner > h1:first-child {
+  display: none !important;
+}
+
+/* Elimina o espaço superior deixado pelo título removido */
+body:has(.hero) .md-content__inner,
+body:has(.grid.cards) .md-content__inner {
+  padding-top: 0 !important;
+}
+
+/* Hero realmente compacto */
+.hero {
+  padding: 1.15rem 1.4rem !important;
+  margin: 0 0 1.4rem !important;
+  border-radius: 14px !important;
+}
+
+/* Título principal da Home */
+.hero h1 {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 0.25rem !important;
+  padding: 0 !important;
+  font-size: clamp(1.8rem, 2.8vw, 2.55rem) !important;
+  line-height: 1.08 !important;
+  text-wrap: pretty !important;
+}
+
+/* Subtítulo da Home */
+.hero h2 {
+  margin: 0 0 0.55rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: clamp(0.98rem, 1.35vw, 1.18rem) !important;
+  line-height: 1.3 !important;
+}
+
+/* Texto da apresentação */
+.hero p {
+  max-width: 900px !important;
+  margin: 0 0 0.45rem !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+}
+
+.hero p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Evita que os elementos decorativos aumentem visualmente o bloco */
+.hero::before {
+  top: -130px !important;
+  right: -120px !important;
+  width: 220px !important;
+  height: 220px !important;
+}
+
+.hero::after {
+  right: 90px !important;
+  bottom: -135px !important;
+  width: 165px !important;
+  height: 165px !important;
+}
+
+/* Página de conteúdos começa diretamente nos cards */
+body:has(.grid.cards) .grid.cards {
+  margin-top: 0 !important;
+}
+
+/* Menu superior: mantém todos os itens visíveis */
+.md-tabs__list {
+  gap: 0 !important;
+}
+
+.md-tabs__item {
+  height: 2.35rem !important;
+}
+
+.md-tabs__link {
+  padding-inline: 0.34rem !important;
+  font-size: 0.63rem !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.012em !important;
+  white-space: nowrap !important;
+}
+
+/* Título dos artigos usa toda a largura disponível */
+.md-typeset h1 {
+  width: 100%;
+  max-width: none !important;
+  margin: 0 0 0.9rem;
+  font-size: clamp(2rem, 2.15vw, 2.7rem);
+  line-height: 1.08;
+  text-wrap: pretty;
+}
+
+/* Bloco de nível, tempo de leitura e tecnologias */
+.md-typeset > blockquote:first-of-type {
+  padding: 0.58rem 0.9rem !important;
+  margin: 0 0 1.15rem !important;
+}
+
+.md-typeset > blockquote:first-of-type p {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.md-typeset > blockquote:first-of-type p + p {
+  margin-top: 0.32rem !important;
+}
+
+/* Notebook */
+@media screen and (max-width: 1400px) {
+  .md-tabs__link {
+    padding-inline: 0.27rem !important;
+    font-size: 0.59rem !important;
+  }
+
+  .hero {
+    padding: 1.05rem 1.25rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 2.5vw, 2.35rem) !important;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  .hero {
+    padding: 1rem 1.1rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 5vw, 2.25rem) !important;
+  }
+
+  .hero h2 {
+    font-size: 1rem !important;
+  }
+
+  .hero p {
+    font-size: 0.88rem !important;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 0.9rem 0.9rem !important;
+    margin: 0 0 1rem !important;
+    border-radius: 12px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.65rem, 8vw, 2rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero h2 {
+    margin-bottom: 0.45rem !important;
+    font-size: 0.96rem !important;
+  }
+
+  .hero p {
+    margin-bottom: 0.4rem !important;
+    font-size: 0.86rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .md-typeset > blockquote:first-of-type {
+    padding: 0.55rem 0.72rem !important;
+    margin-bottom: 0.95rem !important;
+  }
+}
+
+/* =========================================================
+   HOME — APROVEITAMENTO DE LARGURA E ESPAÇAMENTOS
+   ========================================================= */
+
+/* A Home pode utilizar mais largura que os artigos */
+body:has(.hero) .md-content__inner {
+  width: 100%;
+  max-width: 1100px !important;
+  margin-inline: auto;
+}
+
+/* Hero ocupa toda a largura disponível da Home */
+body:has(.hero) .hero {
+  width: 100%;
+  max-width: none;
+}
+
+/* Reduz o espaço entre o hero e a próxima seção */
+body:has(.hero) .hero {
+  margin-bottom: 1rem !important;
+}
+
+/* Linha divisória da Home mais discreta e compacta */
+body:has(.hero) .md-typeset hr {
+  margin: 1.5rem 0 1.8rem !important;
+}
+
+/* Remove espaço exagerado antes de Base de conhecimento */
+body:has(.hero) .md-typeset hr + h2 {
+  margin-top: 0 !important;
+}
+
+/* Cards aproveitam toda a largura disponível */
+body:has(.hero) .md-typeset .grid {
+  width: 100%;
+}
+
+/* Em telas grandes, mantém duas colunas equilibradas */
+@media screen and (min-width: 961px) {
+  body:has(.hero) .md-typeset .grid.cards > ul,
+  body:has(.hero) .md-typeset .grid.cards > ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 960px) {
+  body:has(.hero) .md-content__inner {
+    max-width: 100% !important;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  body:has(.hero) .md-typeset hr {
+    margin: 1.1rem 0 1.4rem !important;
+  }
+}
+/* =========================================================
+   PÁGINA DE CONTEÚDOS — LARGURA TOTAL
+   ========================================================= */
+
+/* Usa uma largura maior na página de listagem */
+body:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+  width: 100%;
+  max-width: 1180px !important;
+  margin-inline: auto;
+  padding-top: 0 !important;
+}
+
+/* Cards ocupam toda a área disponível */
+body:has(.grid.cards):not(:has(.hero)) .grid.cards {
+  width: 100%;
+  margin-top: 0 !important;
+}
+
+/* Duas colunas equilibradas em telas grandes */
+@media screen and (min-width: 961px) {
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ul,
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Uma coluna em tablet e celular */
+@media screen and (max-width: 960px) {
+  body:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+    max-width: 100% !important;
+  }
+
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ul,
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ol {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   PÁGINA CONTEÚDOS — REMOVE A BARRA LATERAL ESQUERDA
+   ========================================================= */
+
+/* Oculta a navegação lateral somente na página com os cards */
+body:has(.grid.cards):not(:has(.hero)) .md-sidebar--primary {
+  display: none !important;
+}
+
+/* Remove o espaço que seria reservado para a barra lateral */
+body:has(.grid.cards):not(:has(.hero)) .md-content {
+  margin-left: 0 !important;
+}
+
+/* Centraliza e amplia a área dos cards */
+body:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+  width: 100%;
+  max-width: 1240px !important;
+  margin-inline: auto !important;
+  padding-top: 0 !important;
+}
+
+/* Garante que a listagem use toda a largura */
+body:has(.grid.cards):not(:has(.hero)) .grid.cards {
+  width: 100%;
+  margin: 0 !important;
+}
+
+/* Três colunas em telas grandes */
+@media screen and (min-width: 1200px) {
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ul,
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Duas colunas em notebooks e tablets */
+@media screen and (min-width: 761px) and (max-width: 1199px) {
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ul,
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Uma coluna no celular */
+@media screen and (max-width: 760px) {
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ul,
+  body:has(.grid.cards):not(:has(.hero)) .grid.cards > ol {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   HOME E CONTEÚDOS — CENTRALIZAÇÃO REAL NA TELA
+   ========================================================= */
+
+/* Remove completamente as duas barras laterais nessas páginas */
+body:has(.hero) .md-sidebar--primary,
+body:has(.hero) .md-sidebar--secondary,
+body:has(.grid.cards):not(:has(.hero)) .md-sidebar--primary,
+body:has(.grid.cards):not(:has(.hero)) .md-sidebar--secondary {
+  display: none !important;
+}
+
+/* Centraliza a estrutura principal na largura total da página */
+body:has(.hero) .md-main__inner,
+body:has(.grid.cards):not(:has(.hero)) .md-main__inner {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Remove margens reservadas para as barras laterais */
+body:has(.hero) .md-content,
+body:has(.grid.cards):not(:has(.hero)) .md-content {
+  flex: 0 1 1180px !important;
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+/* Área interna ocupa exatamente o centro */
+body:has(.hero) .md-content__inner,
+body:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Tablet e celular */
+@media screen and (max-width: 1220px) {
+  body:has(.hero) .md-content,
+  body:has(.grid.cards):not(:has(.hero)) .md-content,
+  body:has(.hero) .md-content__inner,
+  body:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+    max-width: calc(100% - 2rem) !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body:has(.hero) .md-content,
+  body:has(.grid.cards):not(:has(.hero)) .md-content,
+  body:has(.hero) .md-content__inner,
+  body:has(.grid.cards):not(:has(.hero)) .md-content__inner {
+    max-width: calc(100% - 1.2rem) !important;
+  }
+}
+/* =========================================================
+   ARTIGOS — LAYOUT DE LEITURA EQUILIBRADO
+   ========================================================= */
+
+@media screen and (min-width: 1220px) {
+  /*
+   * Distribuição aproximada:
+   * menu esquerdo: 210px
+   * artigo: todo o espaço restante
+   * menu direito: 210px
+   */
+  .md-main__inner {
+    display: grid !important;
+    grid-template-columns:
+      minmax(190px, 210px)
+      minmax(0, 1fr)
+      minmax(190px, 210px);
+    column-gap: 1.75rem !important;
+    width: 100%;
+    max-width: 1680px;
+    margin-inline: auto;
+  }
+
+  /* Menu da categoria */
+  .md-sidebar--primary {
+    grid-column: 1;
+    width: auto !important;
+    min-width: 0;
+    margin: 0 !important;
+  }
+
+  /* Conteúdo principal */
+  .md-content {
+    grid-column: 2;
+    width: 100%;
+    min-width: 0;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* Área real de leitura */
+  .md-content__inner {
+    width: 100%;
+    max-width: 980px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Índice "Nesta página" */
+  .md-sidebar--secondary {
+    grid-column: 3;
+    width: auto !important;
+    min-width: 0;
+    margin: 0 !important;
+  }
+}
+
+/* Telas maiores: artigo um pouco mais largo */
+@media screen and (min-width: 1550px) {
+  .md-main__inner {
+    grid-template-columns:
+      minmax(200px, 220px)
+      minmax(0, 1fr)
+      minmax(190px, 210px);
+    column-gap: 2rem !important;
+  }
+
+  .md-content__inner {
+    max-width: 1040px !important;
+  }
+}
+
+/* Notebooks menores */
+@media screen and (min-width: 1220px) and (max-width: 1399px) {
+  .md-main__inner {
+    grid-template-columns:
+      minmax(170px, 190px)
+      minmax(0, 1fr)
+      minmax(170px, 190px);
+    column-gap: 1.25rem !important;
+  }
+
+  .md-content__inner {
+    max-width: 880px !important;
   }
 }

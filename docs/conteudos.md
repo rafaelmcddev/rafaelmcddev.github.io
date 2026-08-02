@@ -1,13 +1,10 @@
 ---
 title: Todos os conteúdos
 description: Artigos sobre Python, Django, arquitetura de software, Cloud, DevOps, Inteligência Artificial e colaboração.
+hide:
+  - navigation
+  - toc
 ---
-
-# Explore os conteúdos
-
-Atualmente, esta Knowledge Base possui **27 artigos**.
-
-Escolha uma categoria ou acesse diretamente o conteúdo desejado.
 
 <div class="grid cards" markdown>
 

@@ -203,13 +203,10 @@ def generate_contents_page() -> None:
     content = f"""---
 title: Todos os conteúdos
 description: Artigos sobre Python, Django, arquitetura de software, Cloud, DevOps, Inteligência Artificial e colaboração.
+hide:
+  - navigation
+  - toc
 ---
-
-# Explore os conteúdos
-
-Atualmente, esta Knowledge Base possui **{total_articles} artigos**.
-
-Escolha uma categoria ou acesse diretamente o conteúdo desejado.
 
 <div class="grid cards" markdown>
 
