@@ -1,10 +1,33 @@
+---
+title: Exists, OuterRef e annotate
+description: Como utilizar Exists, OuterRef e annotate para eliminar consultas N+1 e escrever consultas muito mais performáticas no Django ORM.
+tags:
+  - Django
+  - ORM
+  - PostgreSQL
+  - Performance
+  - Backend
+  - Python
+---
+
 # Exists, OuterRef e annotate: consultas avançadas no Django ORM
 
-> 🔴 Avançado • ⏱️ 7 min de leitura
+> 🔴 **Avançado** • ⏱️ **7 min de leitura**
 >
 > **Tecnologias:** Python • Django ORM • PostgreSQL
 
 ![Exists, OuterRef e annotate](../assets/images/exists-outerref-annotate.png)
+
+!!! info "O que você aprenderá"
+
+    Ao final deste artigo você será capaz de:
+
+    - Entender por que o problema de **N+1 Queries** afeta a performance.
+    - Saber quando utilizar `Exists`, `OuterRef` e `annotate`.
+    - Escrever consultas mais eficientes utilizando apenas o Django ORM.
+    - Reduzir a quantidade de consultas ao banco de dados em aplicações de larga escala.
+
+---
 
 ## O problema
 
@@ -144,6 +167,15 @@ Já `Exists` e `OuterRef` brilham quando o objetivo é responder perguntas como:
 - "Existe assinatura ativa?"
 
 sem precisar carregar todos os registros relacionados.
+
+---
+
+## Boas práticas
+
+- Prefira `Exists()` quando o objetivo for apenas verificar a existência de registros.
+- Utilize `OuterRef()` apenas em subqueries correlacionadas.
+- Combine `annotate()` com outros recursos do ORM para manter a lógica próxima do banco.
+- Antes de otimizar, utilize ferramentas como Django Debug Toolbar ou `QuerySet.explain()` para identificar gargalos reais.
 
 ---
 
