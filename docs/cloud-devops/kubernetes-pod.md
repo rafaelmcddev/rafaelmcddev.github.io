@@ -1,14 +1,3 @@
----
-title: Kubernetes: afinal, o que é um Pod?
-description: Entenda o que é um Pod, por que ele é a menor unidade de execução do Kubernetes e como esse conceito facilita o aprendizado da plataforma.
-tags:
-  - Kubernetes
-  - DevOps
-  - Cloud
-  - Containers
-  - Backend
----
-
 # Kubernetes: afinal, o que é um Pod?
 
 > 🟡 **Intermediário** • ⏱️ **7 min de leitura**
