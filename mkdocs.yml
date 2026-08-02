@@ -1,0 +1,95 @@
+site_name: Rafael Dias | Knowledge Base
+site_description: Artigos sobre Python, Django, arquitetura, cloud e engenharia de software
+site_author: Rafael Dias
+site_url: https://rafaelmcddev.github.io
+
+repo_name: rafaelmcddev/rafaelmcddev.github.io
+repo_url: https://github.com/rafaelmcddev/rafaelmcddev.github.io
+
+theme:
+  name: material
+  language: pt-BR
+
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Ativar modo escuro
+
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Ativar modo claro
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+nav:
+  - Início: index.md
+
+  - Inteligência Artificial:
+      - Documentação para humanos e IA: inteligencia-artificial/documentacao-humanos-ia.md
+      - IA na vida dos desenvolvedores: inteligencia-artificial/ia-na-vida-dos-desenvolvedores.md
+      - Demonstração de agentes de IA: inteligencia-artificial/agentes-de-ia.md
+
+  - Python:
+      - Pydantic: python/pydantic.md
+      - Celery vs Dramatiq: python/celery-vs-dramatiq.md
+      - Pandas e BeautifulSoup: python/pandas-beautifulsoup-etl.md
+      - Apache Airflow: python/apache-airflow.md
+
+  - Django:
+      - Django Constraints: django/django-constraints.md
+      - select_related vs prefetch_related: django/select-related-vs-prefetch-related.md
+      - Exists, OuterRef e annotate: django/exists-outerref-annotate.md
+
+  - Arquitetura:
+      - Idempotência: arquitetura/idempotencia.md
+      - Event-Driven Architecture: arquitetura/event-driven-architecture.md
+      - Amazon SQS: arquitetura/amazon-sqs.md
+      - Redis além do cache: arquitetura/redis-alem-do-cache.md
+      - Feature Flags: arquitetura/feature-flags.md
+      - Circuit Breaker e Retry: arquitetura/circuit-breaker-retry.md
+
+  - Cloud e DevOps:
+      - Kubernetes — O que é um Pod?: cloud-devops/kubernetes-pod.md
+      - Kubernetes — Requests vs Limits: cloud-devops/kubernetes-requests-limits.md
+      - Observabilidade: cloud-devops/observabilidade.md
+      - Revert em produção: cloud-devops/revert-producao.md
+
+  - Engenharia de Software:
+      - Changelog: engenharia-software/changelog.md
+      - Spec-Driven Development: engenharia-software/spec-driven-development.md
+
+  - Produto e Colaboração:
+      - Dashboards para Produto: produto-colaboracao/dashboards-produto.md
+      - Refinamentos com Produto: produto-colaboracao/refinamentos-produto.md
+      - Ferramentas Atlassian: produto-colaboracao/ferramentas-atlassian.md
+      - Slack — Boas práticas: produto-colaboracao/slack-boas-praticas.md
+      - Reuniões no home office: produto-colaboracao/reunioes-home-office.md
