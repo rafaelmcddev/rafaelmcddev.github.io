@@ -8,7 +8,7 @@ hide:
 
 <div class="about-hero" markdown>
 
-# Sobre mim
+# Sobre
 
 Sou **Rafael Dias**, Desenvolvedor Backend com foco em **Python, Django e arquitetura de sistemas**.
 

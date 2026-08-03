@@ -2467,7 +2467,7 @@ body:has(.hero) .hero .md-button {
   margin-bottom: 1.25rem !important;
 }
 
-/* Título "Sobre mim" */
+/* Título "Sobre" */
 .about-hero h1 {
   margin: 0 0 0.6rem !important;
   font-size: clamp(1.65rem, 1.9vw, 2rem) !important;
