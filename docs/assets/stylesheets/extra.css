@@ -2682,3 +2682,68 @@ body:has(.hero) .hero .md-button {
     visibility: visible !important;
   }
 }
+
+
+
+/* =========================================================
+   CORREÇÃO — SCROLL DO MENU MOBILE EM MODO HORIZONTAL
+   Garante rolagem vertical do drawer em telas baixas,
+   como iPhone em orientação landscape.
+   Deve permanecer no final absoluto do arquivo.
+   ========================================================= */
+
+@media screen and (max-width: 1219px) {
+  /*
+   * O menu lateral precisa ocupar no máximo a altura visível
+   * e permitir rolagem independente do conteúdo da página.
+   */
+  .md-sidebar--primary {
+    top: 0 !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: 100% !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    min-height: 100% !important;
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  /*
+   * Evita que algum elemento interno do Material bloqueie
+   * o gesto vertical em Safari/iOS.
+   */
+  .md-sidebar--primary .md-nav,
+  .md-sidebar--primary .md-nav__list {
+    overflow: visible !important;
+    touch-action: pan-y !important;
+  }
+}
+
+/* Ajuste específico para celulares em modo horizontal */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .md-sidebar--primary {
+    height: 100svh !important;
+    max-height: 100svh !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: 100svh !important;
+    max-height: 100svh !important;
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    padding-bottom: calc(3rem + env(safe-area-inset-bottom)) !important;
+  }
+}
